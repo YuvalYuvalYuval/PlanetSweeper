@@ -3,8 +3,8 @@ const ASTRO = '👩🏻‍🚀';
 const FAILED = '👾';
 const WON = '🇺🇸';
 
-const winSound = new Audio('../sounds/space-win.wav');
-const hitSound = new Audio('../sounds/space-lose.wav');
+const winSound = new Audio('sounds/space-win.wav');
+const hitSound = new Audio('sounds/space-lose.wav');
 
 
 const gLevels = [
