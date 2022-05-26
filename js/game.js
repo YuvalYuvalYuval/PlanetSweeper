@@ -8,9 +8,9 @@ const hitSound = new Audio('../sounds/space-lose.wav');
 
 
 const gLevels = [
-    { id: 0, size: 4, mines: 3 },
-    { id: 1, size: 8, mines: 12 },
-    { id: 2, size: 12, mines: 30 }
+    { id: 0, size: 4, mines: 3, bestTime: localStorage.getItem('bestTime-0') },
+    { id: 1, size: 8, mines: 12, bestTime: localStorage.getItem('bestTime-1') },
+    { id: 2, size: 12, mines: 30, bestTime: localStorage.getItem('bestTime-2') }
 ];
 
 //time
@@ -43,7 +43,8 @@ function setNewGameData() {
         livesLeft: 3,
         safeClicksLeft: 3,
         hintsLeft: 3,
-        isHint: false
+        isHint: false,
+        gameSecs: 0
     };
     return data;
 }
@@ -202,19 +203,16 @@ function gameOver() {
     stopTime();
     gGame.isOn = false;
     var isVictory = gGame.FlaggedMines === gLevel.mines;
-
     var elEndMsg = document.querySelector('.end-msg');
     var elRsButton = document.querySelector('.restart-btn');
 
     elRsButton.innerText = isVictory ? WON : FAILED;
     elEndMsg.innerText = isVictory ? 'YOU DID IT!' : 'YOU FAILED!';
+    if (isVictory) checkIfBestTime();
     elEndMsg.style.opacity = 1;
 
     if (isVictory) winSound.play();
 }
-
-
-
 
 
 //time keeping
@@ -231,6 +229,7 @@ function runTime() {
     if (mins < 10) mins = '0' + mins;
     if (secs < 10) secs = '0' + secs;
 
+    gGame.gameSecs = gSecCounter;
     document.querySelector('.mins').innerText = mins;
     document.querySelector('.secs').innerText = secs;
 }
@@ -246,6 +245,16 @@ function stopTime() {
 function resetTime() {
     clearInterval(gTimeInterval);
     gSecCounter = 0;
+    gGame.gameSecs = 0;
     document.querySelector('.mins').innerText = '00';
     document.querySelector('.secs').innerText = '00';
+}
+
+function checkIfBestTime() {
+    if (gGame.gameSecs < gLevel.bestTime || gLevel.bestTime === null) {
+        localStorage.setItem(`bestTime-${gLevel.id}`, gGame.gameSecs);
+        gLevel.bestTime = localStorage.getItem(`bestTime-${gLevel.id}`);
+
+        document.querySelector('.end-msg').innerText += ' LEVEL TIME RECORD!';
+    }
 }
