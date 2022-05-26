@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
+    <title>Planet Sweeper</title>
+</head>
+
+<body onload="renderBtns()">
+    <div class="title">
+        <h1>Planet Sweeper</h1>
+        <h3> The survival of humanity is up to you</h3>
+        <h2>Can you conquer this planet?</h2>
+    </div>
+
+    <div class="btn-container"></div>
+
+    <div class="game-data">
+        <p>Planet Size: <span class="field-size">select</span></p>
+        <p>⏱
+            <span class="mins">00</span>:
+            <span class="secs">00</span>
+        </p>
+        <p>🚩 Flags: <span class="flags-left">-</span></p>
+        <p>💙 Lives: <span class="lives-left">-</span></p>
+    </div>
+    <div class="game-modes">
+        <p>Safe Clicks: <span class="safe-clicks-left">-</span> </p>
+        <button onclick="safeClick()">USE</button>
+        <p>Hints: <span class="hints-left">-</span> </p>
+        <button onclick="hintClick()">USE</button>
+
+    </div>
+
+    <div class="modal">
+        <p class="end-msg"></p>
+    </div>
+
+    <table class="board"></table>
+
+    <footer>©Made in planet earth by Yuval Rubin</footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/game.js"></script>
+</body>
+
+</html>

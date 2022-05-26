@@ -1,0 +1,133 @@
+body {
+    color: white;
+    font-family: Orbitron;
+    background-color: black;
+    text-align: center;
+    box-sizing: border-box;
+    background-image: url('../img/moonWallpaper.jpeg');
+}
+
+img {
+    width: 100px;
+}
+
+table {
+    margin: 5px auto;
+    border-spacing: 2px;
+}
+
+.btn-container button {
+    font-family: cursive;
+    width: 75px;
+    height: 32px;
+    margin: 10px 5px 2px;
+    font-size: 18px;
+}
+
+.btn-container button:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.829);
+
+}
+
+h2 {
+    margin-bottom: 5px;
+}
+
+p {
+    margin: 0;
+}
+
+.cell {
+    height: 36px;
+    width: 36px;
+    background-color: #035397;
+    cursor: pointer;
+    box-shadow: inset -3px -3px 10px 1px #DDDDDD;
+    border-radius: 3px;
+}
+
+.cell:hover {
+    background-color: #035297c3;
+}
+
+.board span {
+    visibility: hidden;
+}
+
+.board .shown {
+    visibility: visible;
+}
+
+.flipped {
+    background-color: #FCD900;
+}
+
+.flipped:hover {
+    background-color: #fcda00ba;
+}
+
+.marked {
+    background-image: url('../img/usaFlag.png');
+    background-size: 45px;
+    visibility: visible;
+}
+
+.game-data,
+.game-modes {
+    background-color: rgba(128, 128, 128, 0.285);
+    font-size: 18px;
+    padding: 4px;
+    border-radius: 3px;
+    position: absolute;
+}
+
+.game-data {
+    top: 20%;
+    left: 0;
+}
+
+.game-modes {
+    top: 40%;
+    left: 0;
+}
+
+.game-modes button {
+    font-family: monospace;
+    font-weight: bold;
+    background-color: green;
+    box-shadow: inset -2px -1px 4px 0 lightgreen;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.game-data p {
+    margin: 5px auto;
+}
+
+.end-msg {
+    width: 25%;
+    margin: auto;
+    border-radius: 30px;
+    opacity: 0;
+    transition: 2s;
+    background-color: #4FBDBA;
+}
+
+.warning {
+    /* importent for when the cell is hovered over */
+    background-color: red !important;
+}
+
+.safe {
+    background-color: green;
+}
+
+footer {
+    color: yellow;
+    font-size: 18px;
+    opacity: 0.4;
+    position: absolute;
+    left: 2%;
+    bottom: 2%;
+}
