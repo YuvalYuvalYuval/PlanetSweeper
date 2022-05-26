@@ -45,6 +45,7 @@ p {
     cursor: pointer;
     box-shadow: inset -3px -3px 10px 1px #DDDDDD;
     border-radius: 3px;
+    transition: 250ms;
 }
 
 .cell:hover {

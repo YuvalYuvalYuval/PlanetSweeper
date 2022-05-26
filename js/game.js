@@ -255,6 +255,6 @@ function checkIfBestTime() {
         localStorage.setItem(`bestTime-${gLevel.id}`, gGame.gameSecs);
         gLevel.bestTime = localStorage.getItem(`bestTime-${gLevel.id}`);
 
-        document.querySelector('.end-msg').innerText += ' LEVEL TIME RECORD!';
+        document.querySelector('.end-msg').innerText += ' - LEVEL TIME RECORD!';
     }
 }
