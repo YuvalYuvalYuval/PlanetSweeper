@@ -88,7 +88,7 @@ function cellClicked(elCell, i, j) {
     console.log(gGame);
 
     //if its the first cell, start time and place mines
-    if (gGame.shownCount === 1) {
+    if (gGame.shownCount === 1 && gGame.livesLeft === 3) {
         placeMines(gBoard);
         renderMinesAndNegsCount(gBoard);
         startTime();
